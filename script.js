@@ -45,28 +45,3 @@ function selectSize(select) {
   alert("Size selected: " + select.value);
 }
 
-// Rating System
-function rate(stars) {
-  localStorage.setItem('rating', stars);
-  setRating(stars);
-}
-
-function setRating(stars) {
-  const starsEls = document.querySelectorAll('.rating span');
-  starsEls.forEach((star, index) => {
-    if (index < stars) {
-      star.classList.add('selected');
-    } else {
-      star.classList.remove('selected');
-    }
-  });
-  document.getElementById('rating-value').innerText = `(${stars}/5)`;
-}
-
-// Load saved rating on page load
-window.onload = function() {
-  const savedRating = localStorage.getItem('rating');
-  if (savedRating) {
-    setRating(parseInt(savedRating));
-  }
-};
