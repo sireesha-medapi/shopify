@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>Product Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="container">
+  <!-- Product Gallery -->
+  <div class="product-gallery">
+    <img id="mainImage" src="C:\Users\SIREESHA M\Desktop\assets\image1.jpg" alt="Main Product" />
+    <div class="thumbnails">
+      <img src="C:\Users\SIREESHA M\Desktop\assets\image2.jpg" class="thumb" onclick="changeImage(this)" />
+      <img src="C:\Users\SIREESHA M\Desktop\assets\image3.jpg" class="thumb" onclick="changeImage(this)" />
+      <img src="C:\Users\SIREESHA M\Desktop\assets\image4.jpg" class="thumb" onclick="changeImage(this)" />
+      <img src="C:\Users\SIREESHA M\Desktop\assets\image1.jpg" class="thumb" onclick="changeImage(this)" />
+    </div>
+  </div>
+
+  <!-- Product Details -->
+  <div class="product-details">
+    <h1>Sample Product</h1>
+    <p>$49.99</p>
+
+   
+
+    <!-- Variant Selection -->
+    <div>
+      <label>Color:</label><br />
+      <button onclick="selectColor('Red')">Red</button>
+      <button onclick="selectColor('Blue')">Blue</button>
+    </div>
+
+    <div>
+      <label>Size:</label><br />
+      <select onchange="selectSize(this)">
+        <option value="">Select size</option>
+        <option value="S">Small</option>
+        <option value="M">Medium</option>
+        <option value="L">Large</option>
+      </select>
+      <button onclick="openModal()" id="btn">Size Chart</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button onclick="showTab('desc')">Description</button>
+      <button onclick="showTab('info')">Product Info</button>
+      <button onclick="showTab('shipping')">Shipping</button>
+    </div>
+
+    <div id="desc" class="tab-content">This is the product description.</div>
+    <div id="info" class="tab-content" style="display:none;">Product information goes here.</div>
+    <div id="shipping" class="tab-content" style="display:none;">Shipping details here.</div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Size Chart</h2>
+    <table>
+      <tr><th>Size</th><th>Chest</th></tr>
+      <tr><td>S</td><td>34-36</td></tr>
+      <tr><td>M</td><td>38-40</td></tr>
+      <tr><td>L</td><td>42-44</td></tr>
+    </table>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
